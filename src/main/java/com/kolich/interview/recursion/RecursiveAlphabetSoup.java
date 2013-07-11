@@ -31,7 +31,9 @@ public class RecursiveAlphabetSoup {
 		
 		final String input = "??";
 		
-		for(final String s : recurse(input)) {
+		final List<String> soup = recurse(input);
+		System.out.println(soup.size()); // 676 when using "??", 17576 when using "???", etc.
+		for(final String s : soup) {
 			System.out.println(s);
 		}
 		

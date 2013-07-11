@@ -1,4 +1,4 @@
-package com.kolich.interview.strings;
+package com.kolich.interview.recursion;
 
 import java.util.ArrayList;
 import java.util.List;

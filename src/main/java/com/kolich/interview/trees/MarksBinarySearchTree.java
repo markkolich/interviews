@@ -66,6 +66,7 @@ public final class MarksBinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	// Breadth first search, uses a queue.
+	// O(log n) average, O(n) worst
 	public final Node breadth(final T t) {
 		final Queue<Node> queue = new LinkedList<Node>();
 		if(root_ == null) {
@@ -86,6 +87,7 @@ public final class MarksBinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	// Depth first search, uses a stack.
+	// O(log n) average, O(n) worst
 	public final Node depth(final T t) {
 		final Stack<Node> stack = new Stack<Node>();
 		if(root_ == null) {

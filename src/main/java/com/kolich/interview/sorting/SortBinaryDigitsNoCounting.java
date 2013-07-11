@@ -30,8 +30,9 @@ public class SortBinaryDigitsNoCounting {
 		}
 		
 		//System.out.println(input.length);
-		System.out.println(result);
+		System.out.println(result); // [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
 		//System.out.println(result.size());
+				
 
 	}
 
