@@ -24,6 +24,7 @@ public final class BinaryTreeAsArray<T extends Comparable<T>> {
 		}
 	}
 	
+	// Instead of using a List we could probably use an ArrayDeque.
 	private final List<T> tree_;
 	
 	public BinaryTreeAsArray() {

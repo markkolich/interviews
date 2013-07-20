@@ -40,8 +40,9 @@ public class CustomBlockingQueue<T> {
 			@Override
 			public void run() {
 				while(true) {
-					queue.put(Long.toString(System.currentTimeMillis()));
-					//System.out.println("Sleeping....");
+					final String s = Long.toString(System.currentTimeMillis());
+					System.out.println("Producer put: " + s);
+					queue.put(s);
 					try {
 						// Random sleep.
 						Thread.sleep(random_.nextInt(4000));
@@ -55,7 +56,7 @@ public class CustomBlockingQueue<T> {
 			@Override
 			public void run() {
 				while(true) {
-					System.out.println(queue.take());
+					System.out.println("\tConsumer got: " + queue.take());
 				}
 			}
 		}).start();

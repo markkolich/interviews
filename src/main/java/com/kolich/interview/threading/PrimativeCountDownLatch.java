@@ -25,8 +25,44 @@ public class PrimativeCountDownLatch {
 		synchronized(o_) {
 			if(--count_ <= 0) {
 				o_.notifyAll();
-			}			
+			}
 		}
+	}
+	
+	public static final void main(String[] args) {
+		
+		final PrimativeCountDownLatch latch = new PrimativeCountDownLatch(5);
+		
+		// This thread waits.
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("I'm waiting!");
+				try {
+					latch.await();
+				} catch (InterruptedException e) {
+					System.err.println(e);
+				}
+				System.out.println("Done!");
+			}
+		}).start();
+		
+		// This thread counts down using the latch.
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				for(int i = 0; i < 5; i++) {
+					try {
+						Thread.sleep(1000L);
+					} catch (InterruptedException e) {
+						System.err.println(e);
+					}
+					System.out.println("Counting down... " + (i+1));
+					latch.countDown();					
+				}
+			}
+		}).start();
+		
 	}
 
 }

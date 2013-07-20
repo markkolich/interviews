@@ -16,7 +16,7 @@ public class RemoveSpecifiedCharacters {
 	}
 	
 
-	// Constant lookup time O(n)
+	// Linear lookup time O(n)
 	public static final String removeSpecifiedCharsSet(final String remove,
 		final String input) {
 		// Loop over each of the characters in the to-remove string
@@ -38,7 +38,7 @@ public class RemoveSpecifiedCharacters {
 		return sb.toString();		
 	}
 	
-	// Constant lookup time O(n)
+	// Linear lookup time O(n)
 	public static final String removeSpecifiedChars(final String remove,
 		final String input) {
 		boolean[] flagged = new boolean[input.length()];

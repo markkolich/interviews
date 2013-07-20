@@ -1,4 +1,4 @@
-package com.kolich.interview;
+package com.kolich.interview.random;
 
 import java.util.Random;
 
@@ -24,7 +24,7 @@ public class TwoDice {
 		final Dice d1 = new Dice(), d2 = new Dice();
 		for(int i = 0; i < 200; i++) {
 			int total = d1.roll() + d2.roll();
-			totals[total]++;			
+			totals[total]++;
 		}
 		
 		// Print out a nice bell curve like diagram.
