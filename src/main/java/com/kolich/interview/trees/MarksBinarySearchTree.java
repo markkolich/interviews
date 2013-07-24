@@ -1,7 +1,10 @@
 package com.kolich.interview.trees;
 
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 public final class MarksBinarySearchTree<T extends Comparable<T>> {
@@ -107,6 +110,33 @@ public final class MarksBinarySearchTree<T extends Comparable<T>> {
 		return null;
 	}
 	
+	private final Set<T> inOrderTraversal(final Node root, final Set<T> set) {
+		if(root.left_ != null) {
+			set.addAll(inOrderTraversal(root.left_, set));
+		}
+		set.add(root.data_);
+		if(root.right_ != null) {
+			set.addAll(inOrderTraversal(root.right_, set));
+		}
+		return set;
+	}
+	
+	public final boolean isBST() {
+		final Set<T> nodes = new LinkedHashSet<T>(); // retains insertion order
+		inOrderTraversal(root_, nodes);
+		// Iterate over the set to discover if we have a sorted sequence.
+		T previous = null;
+		final Iterator<T> it = nodes.iterator();
+		while(it.hasNext()) {
+			final T current = it.next();
+			if(previous != null && previous.compareTo(current) >= 0) {
+				return false;
+			}
+			previous = current;
+		}
+		return true;
+	}
+	
 	public static void main(String[] args) {
 
 		final MarksBinarySearchTree<Integer> bst = new MarksBinarySearchTree<Integer>();
@@ -122,6 +152,8 @@ public final class MarksBinarySearchTree<T extends Comparable<T>> {
 		 *                   \
 		 *                   (7)
 		 */
+		
+		System.out.println(bst.isBST());
 		
 		bst.depth(11); // Visits in order: 8, 3, 1, 6, 7, 10
 		

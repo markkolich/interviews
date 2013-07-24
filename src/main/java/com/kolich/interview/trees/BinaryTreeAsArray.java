@@ -83,8 +83,8 @@ public final class BinaryTreeAsArray<T extends Comparable<T>> {
 	public final T breath(final T t) {
 		for(final T e : tree_) {
 			//System.out.println(e);
-			if(e != null && t.compareTo(e) == 0) {				
-				return e; 
+			if(e != null && t.compareTo(e) == 0) {
+				return e;
 			}
 		}
 		return null;

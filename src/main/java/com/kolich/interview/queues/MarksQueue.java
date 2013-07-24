@@ -1,7 +1,7 @@
-package com.kolich.interview.stack;
+package com.kolich.interview.queues;
 
 // FIFO -- element at the "tail" of the stack gets popped
-public class MarksCustomFIFOStack<T> {
+public class MarksQueue<T> {
 
 	private static class Node<T> {
 		public T data_;
@@ -10,7 +10,7 @@ public class MarksCustomFIFOStack<T> {
 	
 	private Node<T> head_;
 	
-	public MarksCustomFIFOStack() {
+	public MarksQueue() {
 		head_ = null;
 	}
 	
@@ -67,20 +67,20 @@ public class MarksCustomFIFOStack<T> {
 	
 	public static void main(String[] args) {
 		
-		final MarksCustomFIFOStack<String> fifo = new MarksCustomFIFOStack<String>();
+		final MarksQueue<String> queue = new MarksQueue<String>();
 		
-		fifo.push("dog");
-		fifo.push("cat");
-		fifo.push("fish");
+		queue.push("dog");
+		queue.push("cat");
+		queue.push("fish");
 		
-		System.out.println(fifo);
+		System.out.println(queue);
 		
-		System.out.println("popped: " + fifo.pop());
-		System.out.println("popped: " + fifo.pop());
-		System.out.println("popped: " + fifo.pop());
+		System.out.println("popped: " + queue.pop());
+		System.out.println("popped: " + queue.pop());
+		System.out.println("popped: " + queue.pop());
 		
 		// Null
-		System.out.println("popped: " + fifo.pop());
+		System.out.println("popped: " + queue.pop());
 		
 	}
 

@@ -1,5 +1,6 @@
 package com.kolich.interview.strings;
 
+import static java.lang.Character.isWhitespace;
 
 public class JustifyParagraphText {
 
@@ -36,7 +37,7 @@ public class JustifyParagraphText {
 			// make the text justified to fit the column width.						
 			for(j = sb.length()-1; sb.length() < COLUMN_WIDTH; j--) {
 				Character c = sb.charAt(j);
-				if(Character.isWhitespace(c)) {
+				if(isWhitespace(c)) {
 					sb.insert(j, " ");
 				}
 				// If we're at the beginning of the String, reset the counter

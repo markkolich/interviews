@@ -1,7 +1,7 @@
-package com.kolich.interview.stack;
+package com.kolich.interview.stacks;
 
 // LIFO - element at the "head" of the stack gets popped
-public class MarksCustomLIFOStack<T> {
+public class MarksStack<T> {
 	
 	private static class Node<T> {
 		public T data_;
@@ -10,7 +10,7 @@ public class MarksCustomLIFOStack<T> {
 	
 	private Node<T> head_; // set to null
 	
-	public MarksCustomLIFOStack() {
+	public MarksStack() {
 		head_ = null;
 	}
 	
@@ -78,7 +78,7 @@ public class MarksCustomLIFOStack<T> {
 
 	public static void main(String[] args) {
 
-		final MarksCustomLIFOStack<String> stack = new MarksCustomLIFOStack<String>();
+		final MarksStack<String> stack = new MarksStack<String>();
 		
 		stack.push("dog");
 		stack.push("cat");
