@@ -7,12 +7,12 @@
     class AvlNode
     {
             // Constructors
-        AvlNode( Comparable theElement )
+        AvlNode( Comparable<Object> theElement )
         {
             this( theElement, null, null );
         }
 
-        AvlNode( Comparable theElement, AvlNode lt, AvlNode rt )
+        AvlNode( Comparable<Object> theElement, AvlNode lt, AvlNode rt )
         {
             element  = theElement;
             left     = lt;
@@ -21,7 +21,7 @@
         }
 
             // Friendly data; accessible by other package routines
-        Comparable element;      // The data in the node
+        Comparable<Object> element;      // The data in the node
         AvlNode    left;         // Left child
         AvlNode    right;        // Right child
         int        height;       // Height

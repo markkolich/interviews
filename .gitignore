@@ -1,10 +1,19 @@
 *.class
 
+# Package Files #
+*.jar
+*.war
+*.ear
+
 .project
 .classpath
-project/target
-lib_managed
-dist
+.idea
+.idea_modules
+.cache
+*.iml
+*.ipr
+*.iws
+
 target
+dist
 bin
-config

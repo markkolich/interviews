@@ -34,7 +34,7 @@
          * Insert into the tree; duplicates are ignored.
          * @param x the item to insert.
          */
-        public void insert( Comparable x )
+        public void insert( Comparable<Object> x )
         {
             root = insert( x, root );
         }
@@ -71,7 +71,7 @@
          * @param x the item to search for.
          * @return the matching item or null if not found.
          */
-        public Comparable find( Comparable x )
+        public Comparable find( Comparable<Object> x )
         {
             return elementAt( find( x, root ) );
         }
@@ -120,7 +120,7 @@
          * @param t the node that roots the tree.
          * @return the new root.
          */
-        private AvlNode insert( Comparable x, AvlNode t )
+        private AvlNode insert( Comparable<Object> x, AvlNode t )
         {
             if( t == null )
                 t = new AvlNode( x, null, null );
@@ -184,7 +184,7 @@
          * @param t the node that roots the tree.
          * @return node containing the matched item.
          */
-        private AvlNode find( Comparable x, AvlNode t )
+        private AvlNode find( Comparable<Object> x, AvlNode t )
         {
             while( t != null )
                 if( x.compareTo( t.element ) < 0 )
