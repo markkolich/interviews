@@ -74,7 +74,7 @@ public class CustomCollectionWithIterator<T> implements Iterable<T> {
 	public static void main(String[] args) {
 		final CustomCollectionWithIterator<Object> c = new CustomCollectionWithIterator<Object>();
 		c.list_.add("Dog");
-		c.list_.add(new Integer(23));
+		c.list_.add(23);
 		c.list_.add("Cat");
 		
 		for(final Object o : c) {
